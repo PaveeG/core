@@ -52,7 +52,7 @@ class WeatherAPISource(BaseISOSource):
 
     def _pull_data(self) -> pd.DataFrame:
         """
-        Pulls data from the MISO API and parses the Excel file.
+        Pulls data from the Weather API and parses the JSON file.
 
         Returns:
             Raw form of data.
