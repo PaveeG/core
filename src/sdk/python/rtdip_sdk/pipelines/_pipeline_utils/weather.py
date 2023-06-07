@@ -7,7 +7,7 @@
 from pydantic import BaseModel
 from datetime import datetime
 
-from pyspark.sql.types import StructType, StructField, TimestampType, DoubleType, StringType, IntegerType
+from pyspark.sql.types import StructType, StructField, DoubleType, StringType, IntegerType
 
 WEATHER_FORECAST_SCHEMA = StructType([
             StructField("CLASS", StringType(), True),

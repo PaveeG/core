@@ -22,20 +22,16 @@ from ..iso import BaseISOSource
 
 class WeatherAPISource(BaseISOSource):
     """
-    The MISO Daily Load ISO Source is used to read daily load data from MISO API. It supports both Actual and Forecast data.
-
-    The Weather API Source is used to load 15 day forecast from Forecast API.
+    The Weather Forecast Source is used to read 15 day forecast from weather API.
 
     API: <a href="https://api.weather.com/v1/geocode/32.3667/-95.4/forecast/hourly/360hour.json</a>
 
 
     Args:
         spark (SparkSession): Spark Session instance
-        options (dict): A dictionary of ISO Source specific configurations
+        options (dict): A dictionary of Weather Source specific configurations
 
     Attributes:
-        load_type (str): Must be one of `actual` or `forecast`
-        date (str): Must be in `YYYYMMDD` format.
 
     """
 

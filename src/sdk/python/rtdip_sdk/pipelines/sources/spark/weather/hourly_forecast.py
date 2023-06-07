@@ -23,29 +23,22 @@ from pyspark.sql import SparkSession
 from .base_weather import WeatherAPISource
 from ...._pipeline_utils.weather import WEATHER_FORECAST_SCHEMA
 
-pd.set_option('display.max_rows', 50)
-pd.set_option('display.max_columns', 500)
-pd.set_option('display.width', 1000)
-
 
 class ForecastAPISourceV1(WeatherAPISource):
     """
-    The MISO Daily Load ISO Source is used to read daily load data from MISO API. It supports both Actual and Forecast data.
+    The Weather Forecast Source is used to read 15 day forecast from weather API.
 
-    API: <a href="https://docs.misoenergy.org/marketreports/">https://docs.misoenergy.org/marketreports/</a>
-
-    Actual data is available for one day minus from the given date.
-
-    Forecast data is available for next 6 day (inclusive of given date).
-
+    API: <a href="https://api.weather.com/v1/geocode/32.3667/-95.4/forecast/hourly/360hour.json</a>
 
     Args:
         spark (SparkSession): Spark Session instance
         options (dict): A dictionary of ISO Source specific configurations
 
     Attributes:
-        load_type (str): Must be one of `actual` or `forecast`
-        date (str): Must be in `YYYYMMDD` format.
+        spark_schema (str): wetaher specified Shema
+        options (dict):
+        weather_url (str): API url
+        required_options (array): list of required config.
 
     """
 
@@ -167,7 +160,7 @@ class ForecastAPISourceV1(WeatherAPISource):
 
     def _pull_data(self) -> pd.DataFrame:
         """
-        Pulls data from the MISO API and parses the Excel file.
+        Pulls data from the Weather API and parses the JSON file.
 
         Returns:
             Raw form of data.
