@@ -8,6 +8,46 @@ from pyspark.sql.types import StructType, StructField, DoubleType, StringType, I
 
 WEATHER_FORECAST_SCHEMA = StructType(
     [
+        # StructField("Class", StringType(), True),
+        # StructField("Clds", IntegerType(), True),
+        # StructField("Day_Ind", StringType(), True),
+        # StructField("Dewpt", IntegerType(), True),
+        # StructField("Dow", StringType(), True),
+        # StructField("Expire_Time_Gmt", IntegerType(), True),
+        # StructField("Fcst_Valid", IntegerType(), True),
+        # StructField("Fcst_Valid_Local", StringType(), True),
+        # StructField("Feels_Llike", IntegerType(), True),
+        # StructField("Golf_Category", StringType(), True),
+        # StructField("Golf_Index", DoubleType(), True),
+        # StructField("Gust", DoubleType(), True),
+        # StructField("Hi", IntegerType(), True),
+        # StructField("Icon_Code", IntegerType(), True),
+        # StructField("Icon_Extd", IntegerType(), True),
+        # StructField("Mslp", DoubleType(), True),
+        # StructField("Num", IntegerType(), True),
+        # StructField("Phrase_12Char", StringType(), True),
+        # StructField("Phrase_22Char", StringType(), True),
+        # StructField("Phrase_32Char", StringType(), True),
+        # StructField("Pop", StringType(), True),
+        # StructField("Precip_Type", StringType(), True),
+        # StructField("Qpf", DoubleType(), True),
+        # StructField("Rh", IntegerType(), True),
+        # StructField("Severity", IntegerType(), True),
+        # StructField("Snow_Qpf", DoubleType(), True),
+        # StructField("Subphrase_Pt1", StringType(), True),
+        # StructField("Subphrase_Pt2", StringType(), True),
+        # StructField("Subphrase_Pt3", StringType(), True),
+        # StructField("Temp", IntegerType(), True),
+        # StructField("Uv_Desc", StringType(), True),
+        # StructField("Uv_Index", IntegerType(), True),
+        # StructField("Uv_Index_Raw", DoubleType(), True),
+        # StructField("Uv_Warning", IntegerType(), True),
+        # StructField("Vis", DoubleType(), True),
+        # StructField("Wc", IntegerType(), True),
+        # StructField("Wdir", IntegerType(), True),
+        # StructField("Wdir_Cardinal", StringType(), True),
+        # StructField("Wspd", IntegerType(), True),
+        # StructField("Wxman", StringType(), True),
         StructField("CLASS", StringType(), True),
         StructField("CLDS", IntegerType(), True),
         StructField("DAY_IND", StringType(), True),
@@ -53,8 +93,8 @@ WEATHER_FORECAST_SCHEMA = StructType(
 
 WEATHER_FORECAST_MULTI_SCHEMA = StructType(
     [
-        StructField("LATITUDE", DoubleType(), True),
-        StructField("LONGITUDE", DoubleType(), True),
+        StructField("Latitude", DoubleType(), True),
+        StructField("Longitude", DoubleType(), True),
         *WEATHER_FORECAST_SCHEMA.fields
     ]
 )
